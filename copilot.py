@@ -36,7 +36,7 @@ class Copilot:
         
         self.system_prompt = """
             You are an expert on the Columbia Business School PhD program and your job is to answer questions 
-            about the university.
+            about the PhD program. 
         """
 
     def ask(self, question, messages):
@@ -52,7 +52,7 @@ class Copilot:
             The retrived information is: {retrieved_info}
 
             Please answer the question based on the retrieved information. If the question is not related to Columbia Business School, 
-            please tell the user and ask for a question related to Columbia Business School.
+            please tell the user and ask for a question related to Columbia Business School and make a joke.
 
             Please highlight the information with bold text and bullet points.
         """
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     copilot = Copilot(key = openai_api_key)
     messages = []
     while True:
-        question = input("Please ask a question: ")
+        question = input("Ask me anything about the PhD program: ")
         retrived_info, answer = copilot.ask(question, messages=messages)
         ### answer can be a generator or a string
 
